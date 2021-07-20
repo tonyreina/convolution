@@ -19,7 +19,7 @@ Here are the equivalent commands in TensorFlow and PyTorch for the 2D convolutio
 + `filters=2` Indicates you want 2 convolutional kernels/filters. This means the output will have 2 channels/layers (regardless of how many channels/layers are in the input tensor)
 + `kernel_size=(3,3)` Indicates a 3x3 convolutional kernel/filter
 + `strides=(1,1)` Indicates the kernel should move 1 pixel at a time in the first and second axes
-+ `padding='valid'` Indicates no padding of the input. The kernel/filter must completely cover a valid pixel.
++ `padding='valid'` Indicates no padding of the input. The kernel/filter must completely cover a valid pixel. If there is no padding, then we lose pixels at the border (kernel_size // 2 + 1 = 1 pixel for a 3x3 kernel and 2 pixels for a 5x5 kernel). If there is padding, then the input and output tensors will have the same height and width (no loss at the border).
 + `activation=None` Indicates no activation function after the convolution. Applied to every pixel in the output. (e.g. ReLU, tanh, Sigmoid)
 
 [**PyTorch**](https://pytorch.org/docs/stable/generated/torch.nn.Conv2d.html)
@@ -42,7 +42,7 @@ Here are the equivalent commands in TensorFlow and PyTorch for the 2D convolutio
 
 ### First convolutional layer:
 
-Note that a "2D convolution" goes through the channel dimension. So the kernel/filter is actually 3 x 3 x number of channels (in this case 3 x 3 x 3). One output channel/layer is produced for each filter/kernel. If there were 123 channels/layers in the input tensor, then the kernel would be 3 x 3 x 123. Again, only 1 output channel/layer per kernel/filter.
+Note that a "2D convolution" goes through the channel dimension. So the kernel/filter is actually 3 x 3 x number of channels (in this case 3 x 3 x 3). One output channel/layer is produced for each filter/kernel. 
 
 *n.b. Moving through the channels is not the same as 3D convolution (even though the kernel has 3 dimensions). A true "3D convolution" has 4 dimensions in the filter (H x W x D x C)*
 
@@ -52,7 +52,7 @@ Note that a "2D convolution" goes through the channel dimension. So the kernel/f
 
 ![build_layer2](build_layer_2/convolution_build_layer2.gif)
 
-## What if there are more than 3 channels?
+## What if there are more than 3 channels/layers in the input tensor?
 
 The "2D convolution" goes through the channel dimension. So the kernel/filter in the example below if 3 x 3 x 4. It still outputs only one channel/layer per filter/kernel.
-![conv_more_input_channels](build_layer_more_channels/convolution_4layers_2outs.gif)
+![conv_more_input_channels](build_layer_more_channels/convolution_4layers_2outs.gif) If there were 123 channels/layers in the input tensor, then the kernel/filter would be 3 x 3 x 123. Again, only 1 output channel/layer per kernel/filter.
