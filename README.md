@@ -16,7 +16,7 @@ Here are the equivalent commands in TensorFlow and PyTorch for the 2D convolutio
 ```
 
 [Arguments:](https://www.tensorflow.org/api_docs/python/tf/keras/layers/Conv2D#args)
-+ `filters=2` Indicates you want 2 convolutional kernels/filters. This means the output will have 2 channels (regardless of how many channels/layers are in the input tensor)
++ `filters=2` Indicates you want 2 convolutional kernels/filters. This means the output will have 2 channels/layers (regardless of how many channels/layers are in the input tensor)
 + `kernel_size=(3,3)` Indicates a 3x3 convolutional kernel/filter
 + `strides=(1,1)` Indicates the kernel should move 1 pixel at a time in the first and second axes
 + `padding='valid'` Indicates no padding of the input. The kernel/filter must completely cover a valid pixel.
