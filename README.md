@@ -19,7 +19,7 @@ Here are the equivalent commands in TensorFlow and PyTorch for the 2D convolutio
 + `filters=2` Indicates you want 2 convolutional kernels/filters. This means the output will have 2 channels/layers (regardless of how many channels/layers are in the input tensor)
 + `kernel_size=(3,3)` Indicates a 3x3 convolutional kernel/filter
 + `strides=(1,1)` Indicates the kernel should move 1 pixel at a time in the first and second axes
-+ `padding='valid'` Indicates no padding of the input. The kernel/filter must completely cover a valid pixel. If there is no padding, then we lose pixels at the border (kernel_size // 2 + 1 = 1 pixel for a 3x3 kernel and 2 pixels for a 5x5 kernel). If there is padding, then the input and output tensors will have the same height and width (no loss at the border).
++ `padding='valid'` Indicates no padding of the input. The kernel/filter must completely cover a valid pixel. If there is no padding, then we lose pixels at the border (kernel_size // 2 + 1 = 1 pixel for a 3x3 kernel and 2 pixels for a 5x5 kernel). If there is padding ('same'), then the input and output tensors will have the same height and width (no loss at the border).
 + `activation=None` Indicates no activation function after the convolution. Applied to every pixel in the output. (e.g. ReLU, tanh, Sigmoid)
 
 [**PyTorch**](https://pytorch.org/docs/stable/generated/torch.nn.Conv2d.html)
