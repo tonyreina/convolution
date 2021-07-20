@@ -44,6 +44,8 @@ Here are the equivalent commands in TensorFlow and PyTorch for the 2D convolutio
 
 Note that a "2D convolution" goes through the channel dimension. So the kernel/filter is actually 3 x 3 x number of channels (in this case 3 x 3 x 3). One output channel/layer is produced for each filter/kernel. If there were 123 channels/layers in the input tensor, then the kernel would be 3 x 3 x 123. Again, only 1 output channel/layer per kernel/filter.
 
+*n.b. Moving through the channels is not the same as 3D convolution (even though the kernel has 3 dimensions). A true "3D convolution" has 4 dimensions in the filter (H x W x D x C)*
+
 ![build_layer1](build_layer_1/convolution_layer1.gif)
 
 ### Second convolutional layer (note the kernel/filter is different):
