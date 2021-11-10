@@ -1,3 +1,7 @@
+Click to open in Binder and run the code.
+.. image:: https://mybinder.org/badge_logo.svg
+ :target: https://mybinder.org/v2/gh/tonyreina/convolution/tree/main/HEAD
+
 # Convolution Animations
 
 Figures to explain how convolutional neural networks work.
