@@ -1,5 +1,6 @@
 Click to open in Binder and run the code.
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/tonyreina/convolution/tree/main/HEAD)
+
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/tonyreina/convolution.git/HEAD)
 
 # Convolution Animations
 
